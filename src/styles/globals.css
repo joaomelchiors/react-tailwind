@@ -19,3 +19,52 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-indent {
+  text-indent: 30px;
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
+
+@layer components{
+  .btn {
+    @apply 
+      px-4 py-2 rounded-md
+      text-base;      
+  }
+
+  .btn-info {
+    @apply btn;
+    @apply bg-blue-500  hover:bg-blue-900;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Para Safari e Chrome */
+  }
+
+  .transition-fade {
+    transition: opacity 0.3s ease-out, max-height 0.5s ease-out, z-index 0s 0.5s;
+  }
+
+  .ehidden {
+    opacity: 0;
+    max-height: 0; /* Ajuste o valor conforme necessário */
+    z-index: -1; /* Empurra o elemento atrás do ícone */
+    overflow: hidden; /* Impede que o conteúdo transborde */
+    position: absolute; /* Pode ser necessário para garantir que o elemento seja removido do fluxo do layout */
+  }
+
+  .eblock {
+    opacity: 1;
+    max-height: 200px; /* Ou um valor adequado para o seu conteúdo */
+    z-index: 1; /* Coloca o elemento sobre o ícone */
+    /* Se o conteúdo for dinâmico, você pode usar um valor maior do que o conteúdo */
+    position: relative; /* Garante que o elemento ocupe o fluxo normal do layout */
+  }
+}
+
+
